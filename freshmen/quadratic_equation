@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+#define _CRT_SECURE_NO WARNING
+
+int main(void)
+{
+	double a, b, c, x1, x2;
+
+	printf("계수 a를 입력하시오: ");
+	scanf_s("%lf", &a);
+	printf("계수 b를 입력하시오: ");
+	scanf_s("%lf", &b);
+	printf("계수 c를 입력하시오: ");
+	scanf_s("%lf", &c);
+
+	if (a == 0) {
+		x1 = -c / b;
+		printf("위의 이차 방정식의 실근은 %.2lf입니다. \n", x1);
+	}
+	else if ((b*b -4 * a*c) < 0) {
+		printf("실근은 존재하지 않습니다.\n");
+        }
+	else {
+		x1 = (-b + sqrt(b*b - 4 * a*c)) / (2 * a);
+		x2 = (-b - sqrt(b*b - 4 * a*c)) / (2 * a);
+		printf("위의 이차 방정식의 실근은 %.2lf와 %.2lf입니다. \n", x1, x2);
+	}
+	return 0;
